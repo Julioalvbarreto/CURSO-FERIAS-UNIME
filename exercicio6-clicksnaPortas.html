@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão clicks nas portas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+    <style>
+        .card{
+            text-align: center;
+            margin: 5%;
+            border: 2px solid black;
+        }
+
+        .list-group-item{
+            border: solid black;
+        }
+
+        .col{
+            padding: 0px;
+        }
+
+
+    </style>
+
+<body>
+    
+
+    <div class="card" >
+        <ul id="list-port" class="list-group list-group-flush">
+          <li id="port-1" class="list-group-item" >Port-eth01</li>
+          <li id="port-2" class="list-group-item">Port-eth02</li>
+          <li id="port-3" class="list-group-item">Port-eth03</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            Você clicou:
+          </div>
+          <div id="nclicks" class="col">
+            0
+          </div>
+          <div class="col">
+            Na Porta:
+          </div>
+          <div id="portx" class="col">
+            Port-eth***
+          </div>
+        </div>
+      </div>
+      <script>
+
+        var list_port = document.querySelector("#list-port")
+        var port_eth01 = document.querySelector("#port-1")
+        var port_eth02 = document.querySelector("#port-2")
+        var port_eth03 = document.querySelector("#port-3")
+        var array_ports = [port_eth01, port_eth02, port_eth03]
+        var quantidadeVz = document.querySelector("#nclicks")
+        var pegarPort = document.querySelector("#portx")
+        var contadora1 = 0
+        var contadora2 = 0
+        var contadora3 = 0
+
+       
+            port_eth01.addEventListener('click',()=>{
+            contadora1++
+            quantidadeVz.innerText = contadora1
+            pegarPort.innerText = port_eth01.innerText
+            console.log("Voce clicou:" +  contadora1, "na porta:"+ pegarPort.innerText)
+            })
+            
+            
+            port_eth02.addEventListener('click',()=>{
+            contadora2++
+            quantidadeVz.innerText = contadora2
+            pegarPort.innerText = port_eth02.innerText
+            console.log("Voce clicou:" +  contadora2, "na porta:"+ pegarPort.innerText)
+            })
+            
+            
+            port_eth03.addEventListener('click',()=>{
+            contadora3++
+            quantidadeVz.innerText = contadora3
+            pegarPort.innerText = port_eth03.innerText
+            console.log("Voce clicou:" +  contadora3, "na porta:"+ pegarPort.innerText)
+            })
+            
+      </script>
+
+</body>
+</html>
