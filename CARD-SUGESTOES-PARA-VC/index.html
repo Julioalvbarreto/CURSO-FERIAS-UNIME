@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Sugestões para você</title>
+    <style>
+        body{
+            background: rgb(221, 219, 219);
+        }
+        #card{
+            background: white;
+            margin: 5% 40% 0% 40%;
+            box-shadow: 2px 2px 2px 2px white;
+            border-radius: 15px;
+        }    
+        .justificar{
+            text-align: justify;
+        }
+        .menu{
+            display: inline-block;
+            padding: 10px;
+        }
+        .clear-div{
+            display: inline-block;
+            width: 100%;
+        }
+        #titulo{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        button{
+            color: red;
+            border: 1px ;
+            font-size: 18px;
+            background: white;
+            cursor: pointer;
+        }
+        td{
+            border: 1px solid gray;
+            color: red;
+            padding: 6px;
+            border-radius: 15px;
+            
+        }
+        tr{
+            margin: 50px;
+        }
+        .topicos{
+            color: red;
+            display: inline-block;
+            padding: 10px 16px;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            border-radius: 17px;
+            border: 1px solid rgb(204, 204, 204);
+            cursor: pointer;
+        }
+        .rodape{
+            text-align: center;
+            padding: 20px;
+            
+        }
+        #seguir{
+            display: inline-block;
+          background: gray;
+          padding: 4% 18%;
+          font-size: 25px;
+          font-weight: bold;
+          color: rgb(231, 228, 228);
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="topo" class="justificar">
+            <div id="titulo" class="menu">Sugestões para você &#128526;</div>
+            <div id="button" class="menu"><button>Limpar</button></div>
+            <div class="clear-div"></div>
+            <hr>
+            <p class="menu">Escolha seus assuntos favoritos e receba conteúdos selecionados para você!</p>
+        </div>
+        <div id="conteudo">
+            <div class="topicos"><a>#fato ou #fake</a></div>
+            <div class="topicos"><a>auxilio emergencial</a></div>
+            <div class="topicos"><a>economia</a></div>
+            <div class="topicos"><a>música</a></div>
+            <div class="topicos"><a>política</a></div>
+            <div class="topicos"><a>tecnoligia</a></div>
+            <div class="topicos"><a>imposto de renda</a></div>
+            <div class="topicos"><a>ciência</a></div>
+            <div class="topicos"><a>vídeos</a></div>
+            <div  click="" id="t10" class="topicos"><a>previsão do tempo</a></div>  
+        </div>
+        <div class="rodape">
+            <a id="seguir"> Seguir Assuntos</a>
+        </div>
+    </div>
+
+
+    <script>
+        var topicos = document.querySelectorAll(".topicos")
+        var limpar = document.querySelector("#button")
+        var seguirAssuntos = document.querySelector("#seguir")
+        var clicado = 0
+
+        limpar.addEventListener('click', function limparSelecao(){
+            topicos.forEach(topico =>{
+                topico.style = ""
+                seguir.style = ""
+            })
+        })
+
+
+        topicos.forEach(topico =>{
+            topico.addEventListener('click', function alterarCor(){
+            topico.style = "background: red; color: white"
+            seguir.style = "background: red; color: white; cursor: pointer;"
+
+            clicado += 1
+            console.log(clicado)
+            if(clicado > 1){
+                topico.style = "background: whithe; color: red"
+                seguir.style = ""
+                clicado = 0
+                console.log(clicado)
+            }
+            
+        })
+
+        })
+        
+        seguirAssuntos.addEventListener('click', function alterarCorSeguir(){
+            
+        })
+        
+        
+    </script>
+</body>
+</html>
