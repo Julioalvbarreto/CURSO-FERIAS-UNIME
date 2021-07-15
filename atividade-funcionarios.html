@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Funcionarios:</h1>
+
+
+</body>
+
+
+    <script>
+
+        var listaFuncionarios= [
+            {
+                nome: "Fernando Silva",
+                filhos: [
+                    {nome:"Joãozinho", idade: 7},
+                    {nome:"Ana", idade:17},
+                    {nome:"Valeria", idade: 21}
+                ]
+            },
+            {
+                nome: "Vanessa Pires",
+                filhos:[
+                    {nome:"Pedrinho", idade: 6},
+                    {nome:"Manoel", idade: 22}
+                ]
+            },
+            {
+                nome: "Marcos dos Santos",
+                filhos:[]
+            },
+        ]
+
+       
+        function somarFilhos (index){
+            return listaFuncionarios[index].filhos.length
+        }
+        function pegarIdades (index1, index2){
+            return listaFuncionarios[index1].filhos[index2].idade
+        }
+        var temDireito = ""
+        listaFuncionarios[0].filhos.forEach(elemento => {
+            if(elemento.value<10){
+               temDireito = "sim"
+            }
+        });
+            
+        console.log(temDireito)
+
+        var funcionarios = document.querySelector("body")
+            funcionarios.innerHTML += `
+            <div style="float: left;" class="col-md-4">
+                <div class="card">  
+                    <div class="card-header">${listaFuncionarios[0].nome}</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Total de filhos: ${somarFilhos(0)} </li>
+                            <li>Idade dos Filhos: ${pegarIdades(0,0)}, ${pegarIdades(0,1)}, ${pegarIdades(0,2)} </li>
+                            <li>Bonificável: Sim </li>
+                            <li>Valor do Bônus: R$ 120,00 </li>
+                        </ul>
+                    </div>
+                </div>
+            <div> `
+                funcionarios.innerHTML += `
+            <div style="float: left;" class="col-md-4">
+                <div class="card">  
+                    <div class="card-header">${listaFuncionarios[1].nome}</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Total de filhos: ${somarFilhos(1)} </li>
+                            <li>Idade dos Filhos: ${pegarIdades(1,0)}, ${pegarIdades(1,1)}</li>
+                            <li>Bonificável: Sim </li>
+                            <li>Valor do Bônus: R$ 70,00 </li>
+                        </ul>
+                    </div>
+                </div>
+            <div> `    
+                funcionarios.innerHTML += `
+            <div style="float: left;" class="col-md-4">
+                <div class="card">  
+                    <div class="card-header">${listaFuncionarios[2].nome}</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Total de filhos: ${somarFilhos(2)} </li>
+                            <li>Idade dos Filhos: N/a </li>
+                            <li>Bonificável: Não </li>
+                            <li>Valor do Bônus: N/a </li>
+                        </ul>
+                    </div>
+                </div>
+            <div> `              
+            
+            
+        
+
+    </script>
+
+</html>
